@@ -8,6 +8,7 @@ const SearchResults = () => {
   return (
     <View style= {styles.container}>
       <FlatList
+      
         syle = {styles.list}
         data={feed}
         renderItem={({item})=> <Post post={item}/> }>
