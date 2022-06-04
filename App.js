@@ -3,14 +3,15 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import Home from './src/Screens/Home'
 import SearchResults from './src/Screens/SearchResults'
 import DestinatioNSearch from './src/Screens/DestinationSearch'
-
+import Guests from './src/Screens/Guests'
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <Home/> */}
       {/* <SearchResults /> */}
-      <DestinatioNSearch/>
+      {/* <DestinatioNSearch/> */}
+      <Guests />
     </SafeAreaView>
   );
 }
