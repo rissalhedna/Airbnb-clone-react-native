@@ -1,30 +1,36 @@
 import { View, Text, StyleSheet, Image} from 'react-native'
 import React from 'react'
 import airbnb1 from '../../../assets/Images/airbnb1.jpg'
-const Post = () => { 
+
+const Post = ({post}) => { 
+
   return (
     //   a vew that containes all of our posts
     <View style = {styles.container}>
 
       {/* Imgae */}
         <Image style = {styles.image}
-            source = {airbnb1}/>
+            source = {{uri: post.image}}/>
+
       {/* Bed and bedroom */}
         <Text style={styles.bedrooms}>
-            1 bed 1 bedroom
+            {post.bed} bed {post.bedroom} bedroom
         </Text>
+
       {/* Type and description */}
         <Text style = {styles.description} numberOfLines={2}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis aperiam odio accusantium aut, nulla nostrum porro minus nesciunt fugiat nobis esse suscipit placeat alias veritatis totam? Nesciunt quam cupiditate nemo!    
+            {post.type}. {post.title}.
         </Text>
+
       {/* Old price and new price */}
         <Text style = {styles.prices}>
-            <Text style = {styles.oldPrice}>$36</Text>
-            <Text style = {styles.newPrice}>  $30 </Text>
+            <Text style = {styles.oldPrice}>${post.oldPrice}</Text>
+            <Text style = {styles.newPrice}>  ${post.newPrice} </Text>
             <Text>/ night</Text>
         </Text>
+
       {/* total price */}
-        <Text style = {styles.totalPrice}>$230 total</Text>
+        <Text style = {styles.totalPrice}>${post.totalPrice} total</Text>
     </View>
   )
 }
@@ -42,7 +48,7 @@ const styles = StyleSheet.create({
     },
     prices:{
         fontSize:18,
-        marginVertical:10
+        marginVertical:5
     },
     oldPrice:{
         color:'grey',
@@ -54,7 +60,8 @@ const styles = StyleSheet.create({
     },
     totalPrice:{
         textDecorationLine:'underline',
-        color:'grey'
+        color:'grey',
+        marginBottom:20,
     },
     description:{
         fontSize:18,

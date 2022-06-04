@@ -34,7 +34,7 @@ const Home = (props) => {
 const styles = StyleSheet.create({
     container:{
         width:'100%',
-        height:'100%',
+        height:'65%',
     },
     image:{
         width:'100%',
