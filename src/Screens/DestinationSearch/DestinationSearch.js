@@ -1,13 +1,19 @@
-import { View, Text , StyleSheet, TextInput, FlatList, Image} from 'react-native'
+import { View, Text , StyleSheet, TextInput, FlatList, Image, Pressable} from 'react-native'
 import React , {useState} from 'react'
 import searchResults from '../../../assets/Data/search'
 import LocIcon from '../../../assets/Images/loc.png'
+import { useNavigation } from '@react-navigation/native'
+
 const DestinationSearch = () => {
 
-    const [inputText, setInputText] = useState("")
+    const navigation = useNavigation();
+    const [inputText, setInputText] = useState("");
 
   return (
-    <View style={styles.container}>
+
+    <>
+        <Text style={{width:'100%',backgroundColor:'white',paddingTop:50,paddingLeft:10,paddingBottom:10, color:'blue', fontWeight:'bold', width:'100%'}} onPress={()=>navigation.navigate("HomeTabNavigator")}>{"< Home"}</Text>
+        <View style={styles.container}>
         {/* Input Components */}
         <TextInput style = {styles.input}
             placeholder="Where are you going ?"
@@ -18,22 +24,26 @@ const DestinationSearch = () => {
         <FlatList 
             data={searchResults}
             renderItem={({item})=> 
-                <View style = {styles.row}>
+                <Pressable onPress={()=>navigation.navigate("Guests")} style = {styles.row}>
                     <View style={styles.iconContainer}>
                         <Image source={LocIcon} style ={styles.locIcon}/>
                     </View>
                     <Text style={styles.locText}>{item.description}</Text>
-                </View>
+                </Pressable>
             }/>
 
     </View>
+    </>
+    
   )
 }
 
 const styles = StyleSheet.create({
     container:{
-        margin:20,
-        width:'70%',
+        top:30,
+        marginBottom:20,
+        width:'90%',
+        alignSelf:'center'
     },
     input:{
         fontSize:18,

@@ -1,18 +1,22 @@
-import { View,
+import { 
+    View,
     Text,
     ImageBackground,
     StyleSheet,
     Pressable,
-    Image
+    Image,
     } from 'react-native'
 import React from 'react'
 import Background from '../../../assets/Images/background.jpg'
 import searchIcon from '../../../assets/Images/searchicon.png'
+import { useNavigation } from '@react-navigation/native'
+
 const Home = (props) => {
+    const navigation = useNavigation();
   return (
     <View style = {styles.container}>
         {/* Search button */}
-        <Pressable style = {styles.searchbtn} onPress={()=>alert("Search Clicked")}>
+        <Pressable style = {styles.searchbtn} onPress={()=>navigation.navigate("DestinationSearch")}>
                 <Image style = {styles.searchbtnimage} source={searchIcon}></Image>
                 <Text style = {styles.searchbtntext}>Where are you going?</Text>
         </Pressable>
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
         color:'white',
         width:'60%',
         marginLeft:25,
+        marginTop:50,
 
     },
     button:{
@@ -83,10 +88,9 @@ const styles = StyleSheet.create({
         height:50,
         borderWidth:2,
         borderColor:'#b7726b',
-        marginBottom:10,
         position:'absolute',
         zIndex:100,
-        top:20,
+        top:45,
     },
     searchbtntext:{
         marginRight:'auto',
