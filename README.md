@@ -7,17 +7,25 @@ With this app, users can browse and book vacation rentals, create and manage the
 # Features
 
 Browse listings: Users can search for rentals by location, price, and availability and view detailed listings with photos, descriptions, and amenities.
+
+
 Book rentals: Users can book rentals directly through the app, with the ability to specify dates and number of guests.
 Create listings: Users can create and manage their own listings, including adding photos and descriptions, setting prices and availability, and specifying amenities.
+
+
 Communication: Users can send and receive messages with hosts and guests through the app, making it easy to coordinate stays.
 # Requirements
 
 React Native 0.63 or higher
+
+
 Expo 3.22 or higher
 Installation
 
 # Clone this repository
 Install dependencies: npm install or yarn install
+
+
 Run the app: npm start or yarn start
 Contributions
 
