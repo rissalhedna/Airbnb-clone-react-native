@@ -10,6 +10,8 @@ Browse listings: Users can search for rentals by location, price, and availabili
 
 
 Book rentals: Users can book rentals directly through the app, with the ability to specify dates and number of guests.
+
+
 Create listings: Users can create and manage their own listings, including adding photos and descriptions, setting prices and availability, and specifying amenities.
 
 
